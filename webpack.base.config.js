@@ -79,6 +79,7 @@ module.exports = (env) => {
   const aiDistPath = path.resolve(PWD, 'node_modules/ai/dist')
   const extraCopyWebpackPluginPatterns = []
   const extraIgnorePluginEntries = []
+  console.log('aiDist exists?', fs.existsSync(aiDistPath))
   if (fs.existsSync(aiDistPath)) {
     extraCopyWebpackPluginPatterns.push({
       // Standalone ai project expects images and other assets to be in its public folder, so copy them to AI's new root `/ai`
